@@ -1,5 +1,8 @@
 #spring.application.name=331-backend
 spring:
+  profiles:
+    active:
+      - db
   application:
     name: 331-backend
   datasource:
