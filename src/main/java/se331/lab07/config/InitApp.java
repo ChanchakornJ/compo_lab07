@@ -5,13 +5,17 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 import se331.lab07.entity.Event;
+import se331.lab07.entity.Organizer;
 import se331.lab07.repository.EventRepository;
+import se331.lab07.repository.OrganizerRepository;
 
 
 @Component
 @RequiredArgsConstructor
 public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     final EventRepository eventRepository;
+    private final OrganizerRepository organizerRepository;
+
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent){
         eventRepository.save(Event.builder()
@@ -50,5 +54,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .time("10.00am - 6.00 pm.")
                 .petsAllowed(true)
                 .organizer("Chiang Mai Municipality").build());
+        organizerRepository.save(Organizer.builder()
+                .name("Or")
+                .address("das").build());
     }
 }

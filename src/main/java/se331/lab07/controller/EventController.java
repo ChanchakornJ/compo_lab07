@@ -9,11 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import se331.lab07.entity.Event;
 
-import jakarta.annotation.PostConstruct;
 import se331.lab07.service.EventService;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 @RestController
 @RequiredArgsConstructor
