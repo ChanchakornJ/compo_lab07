@@ -29,7 +29,7 @@ public class EventController {
             return new ResponseEntity<>(LabMapper.INSTANCE.getEventDto(pageOutput.getContent()),responseHeader,HttpStatus.OK);
         }catch(IndexOutOfBoundsException e){
             return ResponseEntity.ok().headers(responseHeader).body(pageOutput.getContent());
-            
+
         }
 
     }
