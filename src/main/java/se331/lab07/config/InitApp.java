@@ -140,7 +140,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 tempEvent.setOrganizer(org3);
                 org3.getOwnEvents().add(tempEvent);
                 tempEvent.setParticipants(List.of(par1, par3, par4));
-                eventDTO = ParticipantOwnEventsDTO.builder()
+
+
+        eventDTO = ParticipantOwnEventsDTO.builder()
                         .id(tempEvent.getId())
                         .category(tempEvent.getCategory())
                         .title(tempEvent.getTitle())
